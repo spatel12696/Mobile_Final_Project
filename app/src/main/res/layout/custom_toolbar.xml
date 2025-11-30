@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/customToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@drawable/bg_toolbar"
+    android:elevation="8dp"
+    android:paddingHorizontal="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/mapButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_map"
+            android:contentDescription="Map"
+            android:tint="#0E1422" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Spotlight"
+            android:textColor="#0E1422"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/savedEventsButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_star"
+            android:contentDescription="Saved Events"
+            android:tint="#0E1422" />
+
+        <ImageButton
+            android:id="@+id/logoutButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_logout"
+            android:contentDescription="Logout"
+            android:tint="#0E1422" />
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

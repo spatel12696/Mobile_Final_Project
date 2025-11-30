@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Spotlight palette -->
+    <color name="bg_primary">#0D1628</color>
+    <color name="bg_surface">#131F36</color>
+    <color name="bg_card">#182540</color>
+    <color name="bg_chip">#1F2E4A</color>
+    <color name="accent_gold">#F7C948</color>
+    <color name="accent_teal">#4CD1B3</color>
+    <color name="stroke_dark">#223453</color>
+    <color name="text_primary">#EAF0FF</color>
+    <color name="text_secondary">#A7B8D9</color>
+</resources>

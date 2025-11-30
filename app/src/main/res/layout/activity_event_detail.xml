@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/bg_card"
+            android:elevation="8dp">
+
+            <TextView
+                android:id="@+id/eventName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Event Name"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="14dp"
+                android:gravity="start">
+
+                <TextView
+                    android:id="@+id/eventLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chip"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp"
+                    android:text="Location"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:drawableStart="@drawable/ic_map"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/accent_gold" />
+
+                <TextView
+                    android:id="@+id/eventDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/bg_chip"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp"
+                    android:text="Date"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:drawableStart="@drawable/ic_star"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/accent_teal" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/eventDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Event Description"
+                android:textColor="@color/text_secondary"
+                android:textSize="15sp"
+                android:layout_marginTop="16dp" />
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="18dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/audioIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Playing event audio..."
+                android:textColor="@color/accent_gold"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="18dp">
+
+            <Button
+                android:id="@+id/viewOnMapButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View on Map"
+                android:background="@drawable/btn_primary"
+                android:textColor="#0E1422"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/saveEventButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Saved Events"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_secondary"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_chip"
+                android:textColor="@color/accent_gold"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
