@@ -19,9 +19,9 @@ It brings together multiple Android concepts into a single cohesive prototype, d
 - Redirects authenticated users directly to the Home screen.
 - Prevents unauthorized access to event data.
 
-<img width="208" height="458" alt="image" src="https://github.com/user-attachments/assets/a2f54807-55b5-488a-ad78-412a4ab35f93" />
+<img width="288" height="639" alt="image" src="https://github.com/user-attachments/assets/d7e7b6b2-23a3-483e-9c55-cb1450132f80" />
 
-<img width="205" height="457" alt="image" src="https://github.com/user-attachments/assets/814f3f3b-9393-4900-9111-5c066763e6bf" />
+<img width="284" height="634" alt="image" src="https://github.com/user-attachments/assets/02400dc1-6fd0-46eb-bc7a-25fcca191ec4" />
 
 ### 🏠 Dynamic Home Page
 - Displays events using **RecyclerView** in a clean, scrollable list.
@@ -31,7 +31,7 @@ It brings together multiple Android concepts into a single cohesive prototype, d
     - **Logout** button (right)
 - Features a **Search Bar** (top right) that filters events by name in real-time.
 
-<img width="224" height="498" alt="image" src="https://github.com/user-attachments/assets/d4bb4947-5e08-428f-a254-40d27dd3d24a" />
+<img width="285" height="635" alt="image" src="https://github.com/user-attachments/assets/24d49409-f3e9-433b-a70f-5240e8401e99" />
 
 ### 🗺️ Google Maps Integration
 - Shows all event locations with **custom markers**.
@@ -47,7 +47,7 @@ It brings together multiple Android concepts into a single cohesive prototype, d
 - Prevents duplicate entries.
 - Supports adding, viewing, and deleting saved events.\
 
-<img width="236" height="529" alt="image" src="https://github.com/user-attachments/assets/83a55667-9b79-4d26-a534-22930bd05889" />
+<img width="289" height="637" alt="image" src="https://github.com/user-attachments/assets/c2aad52e-2841-4907-9231-42f246f56f36" />
 
 ### 🎬 Multimedia Integration
 - Each event has a **promotional video or audio**.
@@ -56,7 +56,7 @@ It brings together multiple Android concepts into a single cohesive prototype, d
     - 🎵 *Music Fest* – plays MP3 background music.
     - 🎥 *Food Carnival / Fun Fair / Art Exhibit* – plays MP4 event video.
 
-<img width="206" height="457" alt="image" src="https://github.com/user-attachments/assets/5ea19c2b-dd4d-47b0-a0c2-d7d6559d27db" />
+<img width="285" height="633" alt="image" src="https://github.com/user-attachments/assets/6e01a75c-cea4-4833-a592-07a267c93687" />
 
 ### 📱 Sensor Integration (Accelerometer)
 - Detects **shake gesture** using accelerometer.
