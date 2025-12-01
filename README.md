@@ -1,7 +1,7 @@
 # 🎯 Spotlight – EventExplorer
 
 **Spotlight** (EventExplorer) is an Android mobile application built using **Kotlin** that allows users to explore, save, and interact with local events in their community.  
-The app integrates multiple Android components such as **Firebase Authentication**, **SQLite Database**, **Google Maps**, **Multimedia (Audio/Video)**, and **Accelerometer Sensors** to deliver a modern and interactive event discovery experience.
+The app integrates multiple Android components such as **Firebase Authentication**, **Google Maps**, **Multimedia (Audio/Video)**, and **Accelerometer Sensors** to deliver a modern and interactive event discovery experience.
 
 --
 
@@ -40,12 +40,12 @@ It brings together multiple Android concepts into a single cohesive prototype, d
 
 <img width="186" height="407" alt="image" src="https://github.com/user-attachments/assets/968119db-67a2-480e-ba99-770ae3e08d2a" />
 
-### 💾 Database Integration (SQLite)
-- Local database with two tables:
+### 💾 Database Integration (Firebase)
+- Database with two tables:
     - `events` – all available events.
     - `saved_events` – events user has saved.
 - Prevents duplicate entries.
-- Supports adding, viewing, and deleting saved events.\
+- Supports adding, viewing, and deleting saved events.
 
 <img width="289" height="637" alt="image" src="https://github.com/user-attachments/assets/c2aad52e-2841-4907-9231-42f246f56f36" />
 
@@ -77,7 +77,7 @@ It brings together multiple Android concepts into a single cohesive prototype, d
 | Component | Technology |
 |------------|-------------|
 | **Language** | Kotlin |
-| **Database** | SQLite (via `SQLiteOpenHelper`) |
+| **Database** | Firebase |
 | **Authentication** | Firebase Authentication |
 | **Maps** | Google Maps SDK |
 | **Media** | VideoView, MediaPlayer |
