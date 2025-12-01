@@ -37,7 +37,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         findViewById<Button>(R.id.backButton).setOnClickListener { finish() }
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        dbHelper = EventDatabaseHelper(this)
+        dbHelper = EventDatabaseHelper(this) // Reuse Firestore helper for map markers
 
         // ✅ Check if showing all events
         showAllEvents = intent.getBooleanExtra("showAllEvents", false)

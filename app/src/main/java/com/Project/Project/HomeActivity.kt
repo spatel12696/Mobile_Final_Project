@@ -42,6 +42,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         recyclerView = findViewById(R.id.eventsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = EventAdapter(mutableListOf()) { selectedEvent ->
+            // Open detail screen for the tapped event
             val intent = Intent(this, EventDetailActivity::class.java).apply {
                 putExtra("eventName", selectedEvent.name)
                 putExtra("eventLocation", selectedEvent.location)
@@ -94,6 +95,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         Toast.makeText(this, "Shake your device to undo last saved event!", Toast.LENGTH_SHORT).show()
     }
 
+    // Pull events from Firestore (seed defaults if empty/offline)
     private fun loadEvents() {
         dbHelper.seedDefaultsIfEmpty(
             onResult = { events ->
@@ -106,6 +108,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         )
     }
 
+    // Launch a dialog search box and wire to filterEvents
     private fun toggleSearchView() {
         val searchView = SearchView(this)
         searchView.queryHint = "Search events..."
@@ -136,6 +139,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         dialog.show()
     }
 
+    // Filter in-memory list to reduce network churn
     private fun filterEvents(query: String?) {
         val term = query?.trim().orEmpty()
         val filteredList = if (term.isEmpty()) {

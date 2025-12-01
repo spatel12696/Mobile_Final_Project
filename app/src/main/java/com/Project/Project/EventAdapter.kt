@@ -11,6 +11,7 @@ class EventAdapter(
     private val onItemClick: (Event) -> Unit
 ) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
+    // Simple holder for event list rows
     class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.eventName)
         val location: TextView = itemView.findViewById(R.id.eventLocation)
@@ -29,6 +30,7 @@ class EventAdapter(
         holder.location.text = event.location
         holder.date.text = event.date
 
+        // Delegate click handling to caller
         holder.itemView.setOnClickListener {
             onItemClick(event)
         }
@@ -36,6 +38,7 @@ class EventAdapter(
 
     override fun getItemCount(): Int = events.size
 
+    // In-place list updates for search/filter/results
     fun updateData(newEvents: List<Event>) {
         events.clear()
         events.addAll(newEvents)

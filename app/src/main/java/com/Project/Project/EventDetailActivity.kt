@@ -35,6 +35,7 @@ class EventDetailActivity : AppCompatActivity() {
         val mapButton = findViewById<Button>(R.id.viewOnMapButton)
         val videoView = findViewById<VideoView>(R.id.videoView)
 
+        // Event payload arrives via Intent extras
         event = Event(
             name = intent.getStringExtra("eventName") ?: "",
             location = intent.getStringExtra("eventLocation") ?: "",
@@ -62,6 +63,7 @@ class EventDetailActivity : AppCompatActivity() {
             else -> videoView.visibility = View.GONE
         }
 
+        // Check saved state up front so button label is accurate
         var alreadySaved = false
         dbHelper.isEventSaved(event.name, onResult = { saved ->
             alreadySaved = saved
@@ -116,6 +118,7 @@ class EventDetailActivity : AppCompatActivity() {
         }
     }
 
+    // Simple video helper with looped playback
     private fun playVideo(videoView: VideoView, resId: Int) {
         videoView.visibility = View.VISIBLE
         val uri = Uri.parse("android.resource://$packageName/$resId")
@@ -127,6 +130,7 @@ class EventDetailActivity : AppCompatActivity() {
         videoView.start()
     }
 
+    // Simple audio helper with looped playback
     private fun playAudio(resId: Int) {
         stopMedia()
         mediaPlayer = MediaPlayer.create(this, resId)
@@ -135,6 +139,7 @@ class EventDetailActivity : AppCompatActivity() {
         isAudioPlaying = true
     }
 
+    // Stop and release audio if playing
     private fun stopMedia() {
         if (isAudioPlaying) {
             mediaPlayer?.stop()

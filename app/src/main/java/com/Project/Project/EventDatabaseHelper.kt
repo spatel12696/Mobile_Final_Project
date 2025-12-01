@@ -9,11 +9,13 @@ class EventDatabaseHelper(context: Context) {
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
+    // Central collections for shared events and per-user saved events
     private val eventsCollection = firestore.collection("events")
     private fun savedEventsCollection(uid: String) = firestore.collection("users")
         .document(uid)
         .collection("saved_events")
 
+    // Ensure we always have a user (signed-in or anonymous) before hitting Firestore
     private fun withUserId(onReady: (String) -> Unit, onError: (Exception) -> Unit) {
         val current = auth.currentUser
         if (current != null) {
@@ -27,6 +29,7 @@ class EventDatabaseHelper(context: Context) {
         }
     }
 
+    // Default seed data shown if Firestore is empty or unreachable
     private val defaultEvents = listOf(
         Event(
             id = 1,
@@ -110,6 +113,7 @@ class EventDatabaseHelper(context: Context) {
         )
     )
 
+    // Seed Firestore with defaults if empty; fall back locally on failure
     fun seedDefaultsIfEmpty(
         onResult: (List<Event>) -> Unit,
         onError: (Exception) -> Unit = {}
@@ -137,6 +141,7 @@ class EventDatabaseHelper(context: Context) {
             }
     }
 
+    // Fetch all events (fallback to defaults if none/failed)
     fun fetchEvents(
         onResult: (List<Event>) -> Unit,
         onError: (Exception) -> Unit = {}
@@ -156,6 +161,7 @@ class EventDatabaseHelper(context: Context) {
             }
     }
 
+    // Save current event under the user's saved collection
     fun saveEvent(
         event: Event,
         onComplete: () -> Unit = {},
@@ -169,6 +175,7 @@ class EventDatabaseHelper(context: Context) {
         }, onError = onError)
     }
 
+    // Check if an event is already saved for this user
     fun isEventSaved(
         name: String,
         onResult: (Boolean) -> Unit,
@@ -182,6 +189,7 @@ class EventDatabaseHelper(context: Context) {
         }, onError = onError)
     }
 
+    // Get all saved events for this user
     fun getSavedEvents(
         onResult: (List<Event>) -> Unit,
         onError: (Exception) -> Unit = {}
@@ -195,6 +203,7 @@ class EventDatabaseHelper(context: Context) {
         }, onError = onError)
     }
 
+    // Delete a saved event by name for this user
     fun deleteSavedEventByName(
         name: String,
         onComplete: () -> Unit = {},

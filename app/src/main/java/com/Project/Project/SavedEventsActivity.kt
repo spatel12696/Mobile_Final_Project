@@ -27,6 +27,7 @@ class SavedEventsActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = EventAdapter(mutableListOf()) { selectedEvent ->
+            // Open detail when a saved event is tapped
             val intent = Intent(this, EventDetailActivity::class.java)
             intent.putExtra("eventName", selectedEvent.name)
             intent.putExtra("eventLocation", selectedEvent.location)
@@ -46,6 +47,7 @@ class SavedEventsActivity : AppCompatActivity() {
         dbHelper.getSavedEvents(
             onResult = { savedEvents ->
                 if (savedEvents.isEmpty()) {
+                    // Empty-state copy when no saved events exist
                     emptyText.text = "No events added."
                     emptyText.visibility = TextView.VISIBLE
                     recyclerView.visibility = RecyclerView.GONE
